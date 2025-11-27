@@ -25,12 +25,7 @@ public class ProductController {
 
     @GetMapping("/category/{categoryId}")
     public List<Product> getProductsByCategory(@PathVariable Long categoryId) {
-        try {
-            return productservice.getProductsByCategory(categoryId);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error fetching products for category: " + categoryId, e);
-        }
+        return productservice.getProductsByCategory(categoryId);
     }
 
 }
